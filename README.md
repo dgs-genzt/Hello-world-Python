@@ -12,8 +12,8 @@ Application runs in port 8080
 
 Paths :
 
-1) /   `home page`
-2) /healthz `health check page`
+1) /   `#home page`
+2) /healthz `#health check page`
 
 
 3. What other information would you add to health endpoint json object in step 2? Explain what would be the use case
@@ -23,9 +23,9 @@ Build/Docker/Commit ID: Devops can use this to identify the unique artifact
 
 SRE Contact: Contact information of the SRE if clients want to contact the Admin: ( this should only be displayed if the status is "down" th implemetion does not cover this scenario)
 
-Environment: identifies where the aplication is up.
+Environment: Identifies where the application is up.
 
-Java_Opts/Configuration: to check if the heap information or Env variables passed for the environment is proper.
+Java_Opts/Configuration: To check if the heap information or Env variables passed for the environment is proper.
 ```
 
 5. How would you automate the build/test/deploy process for this application? (a verbal answer is enough. installation of CICD is bonus, not required)
@@ -36,7 +36,8 @@ Java_Opts/Configuration: to check if the heap information or Env variables passe
    - What stages would you have in the CICD pipeline?
    `Depending on the tools the organizations use the stages will differ, some organizations run code ananlysis in Git and Artifactory by integrating test tools to them. In situation like these the no of stages in pipeline will cut down. but the main stages of a pipeline are Checkout, Build, Test, Authorize(if env is prod) and Deploy.`
    - What would be the purpose of each stage in CICD pipeline.
-   ```Checkout : to bring the code to build workspace.
+   ```
+   Checkout : to bring the code to build workspace.
    Build : To package the code to a deployable format like jar, war, zip, container, etc
    Test : This can be a single stage or multiple stages depending on the architecture of the pipeline/deployment process. The fucntionality/performance of the application can be tested in this stage through automated test scripts ```
    Authorize: This is a Stage required for the product owner/manager to authorize the deployment to Production. The concerned person can review test reports and code qualityreport and decide to deploy or forefeit.
